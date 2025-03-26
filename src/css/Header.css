@@ -1,0 +1,91 @@
+.header {
+    background-color: #ffffff;
+    padding: 1% 2%;
+    border-bottom: 0.1rem solid #e5e5e5;
+  }
+  
+  .container {
+    max-width: 100%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .logo-section {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #111;
+  }
+  
+  .logo-icon {
+    font-size: 2rem;
+    margin-right: 0.5em;
+  }
+  
+  .nav-list {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .nav-list li a {
+    text-decoration: none;
+    color: #111;
+    font-weight: 500;
+    transition: color 0.3s;
+    font-size: 1rem;
+    border-bottom: 2px solid transparent;
+    transition: color 0.3s, border-bottom-color 0.5s;
+  }
+  
+  .nav-list li a:hover {
+    color: #37ba99;
+    border-bottom: 2px solid #333;
+  }
+  
+  .auth-buttons {
+    display: flex;
+    gap: 1.5rem;
+  }
+  
+  .sign-in {
+    padding: 0.6em 1.2em;
+    background-color: #fff;
+    border: 0.1rem solid #dcdcdc;
+    color: #111;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 1rem;
+  }
+  
+  .get-started {
+    padding: 0.6em 1.2em;
+    background-color: #111;
+    color: #fff;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 1rem;
+  }
+  
+  .sign-in:hover {
+    background-color: #f8f8f8;
+  }
+  
+  .get-started:hover {
+    background-color: #333;
+  }
+  
+  .user-email {
+    font-weight: 500;
+    color: #111;
+    margin-right: 1rem;
+  }
+  

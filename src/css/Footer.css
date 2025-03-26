@@ -1,0 +1,45 @@
+.footer {
+    background-color: #ffffff;
+    border-top: 1px solid #e5e5e5;
+    padding: 2rem 0;
+  }
+  
+  .footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .footer-text {
+    color: #4b5563; /* Tailwind's gray-600 */
+  }
+  
+  .footer-links {
+    display: flex;
+    gap: 2rem;
+  }
+  
+  .footer-links a {
+    color: #4b5563;
+    text-decoration: none;
+    transition: color 0.3s;
+    border-bottom: 2px solid transparent;
+    transition: color 0.3s, border-bottom-color 0.5s;
+  }
+  
+  .footer-links a:hover {
+    color: #37ba99;
+    border-bottom: 2px solid #333;
+  }
+  
+  @media (min-width: 768px) {
+    .footer-container {
+      flex-direction: row;
+    }
+  }
+  
