@@ -12,6 +12,7 @@ import Login from './Login.jsx'
 import { AuthProvider } from './AuthContext'
 import MyFiles from './MyFiles.jsx'
 import ProtectedRoute from './ProtectedRoute.jsx'
+import EntryPage from './EntryPage.jsx';
 
 
 function App() {
@@ -20,7 +21,8 @@ function App() {
       <AuthProvider>
         <Header/>
         <Routes>
-          <Route path="/" element={<Homepage />} />
+          <Route path="/" element={<EntryPage />} />
+          <Route path="/home" element={<Homepage />} />
           <Route path="/upload" element={<FileUpload />} />
           <Route path="/faq" element={<FAQ />} />
           <Route path="/contact" element={<Contact />} /> 

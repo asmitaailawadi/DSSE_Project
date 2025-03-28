@@ -35,7 +35,7 @@ const Login = () => {
       if (!response.ok) throw new Error(data.detail || "Login failed")
   
       login({email}, data.access_token)
-      navigate("/")
+      navigate("/home")
     } catch (err) {
       setError(err.message)
     } finally {

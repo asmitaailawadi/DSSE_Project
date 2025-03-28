@@ -9,6 +9,7 @@ const SignUp = () => {
   const [username, setUsername] = useState("")
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
+  const [confirmPassword, setConfirmPassword] = useState("")
   const [error, setError] = useState("")
 
   const navigate = useNavigate()
@@ -16,26 +17,33 @@ const SignUp = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
+
+    if (password !== confirmPassword) {
+      setError("Passwords do not match")
+      return
+    }
+
     try {
       const response = await fetch("http://127.0.0.1:8000/signup/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ user_name:username, email, password }),
+        body: JSON.stringify({ user_name: username, email, password }),
       })
 
       const data = await response.json()
+      console.log("Backend Response:", data)  
 
       if (response.ok) {
         login(data.user, data.access_token)
-        navigate("/dashboard")
+        navigate("/login")
       } else {
-        setError(data.message || "Registration failed")
+        setError(data.detail || "Registration failed. Please try again.")
       }
     } catch (err) {
       setError("An error occurred during registration.")
-      console.error(err)
+      console.error("Fetch Error:", err)
     }
   }
 
@@ -70,6 +78,16 @@ const SignUp = () => {
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
+            required
+            className="input-field"
+          />
+        </div>
+        <div className="input-group">
+          <label>Confirm Password:</label>
+          <input
+            type="password"
+            value={confirmPassword}
+            onChange={(e) => setConfirmPassword(e.target.value)}
             required
             className="input-field"
           />
